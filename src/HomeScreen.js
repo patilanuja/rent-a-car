@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ScrollView, TextInput, TouchableOpacity } from "react-native";
 import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StatusBar } from 'react-native';
+
 
 const menu = require("./assets/icons/menu.png");
 const face = require("./assets/face.png");
@@ -38,6 +40,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <StatusBar hidden={false} translucent={false} />
       <View style={styles.container}>
         <View style={styles.headerSection}>
           <Image
@@ -123,6 +126,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: "#e7e7e7",
+    paddingTop: StatusBar.currentHeight , 
   },
   container: {
     flex: 1,
